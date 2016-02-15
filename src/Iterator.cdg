@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Iterator">
+  <ClassDiagramComponents>
+    <Class name="Mainclass" package="" visibility="public" xPosition="542.0" yPosition="74.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+        <Method name="print" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Iterator" name="iter"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Iterator" package="" visibility="public" xPosition="730.0" yPosition="323.0">
+      <Methods>
+        <Method name="next" returnType="Object" visibility="public"/>
+        <Method name="hasNext" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Class name="ArrayRestaurant" package="" visibility="public" xPosition="90.0" yPosition="323.0">
+      <Fields>
+        <Field name="menu" type="String[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getMenu" returnType="String[]" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ArrayListRestaurant" package="" visibility="public" xPosition="1034.0" yPosition="323.0">
+      <Fields>
+        <Field name="menu" type="ArrayList" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getMenu" returnType="ArrayList" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ArrayIterator" package="" visibility="public" xPosition="647.0" yPosition="519.0">
+      <Fields>
+        <Field name="array" type="String[]" visibility="private"/>
+        <Field name="position" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String[]" name="a"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="next" returnType="Object" visibility="public"/>
+        <Method name="hasNext" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ArrayListIterator" package="" visibility="public" xPosition="838.0" yPosition="669.0">
+      <Fields>
+        <Field name="list" type="ArrayList" visibility="private"/>
+        <Field name="position" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="ArrayList" name="al"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="next" returnType="Object" visibility="public"/>
+        <Method name="hasNext" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Reader" package="" visibility="public" xPosition="397.0" yPosition="323.0">
+      <Methods>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Class name="ArrayReader" package="" visibility="public" xPosition="259.0" yPosition="519.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ArrayListReader" package="" visibility="public" xPosition="417.0" yPosition="669.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="createIterator" returnType="Iterator" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="ArrayReader" target="Reader"/>
+    <UseRelation name="" source="Mainclass" target="ArrayRestaurant" sourceCardinality="1..1" targetCardinality="0..*"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="ArrayIterator" target="Iterator"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="ArrayListReader" target="Reader"/>
+    <UseRelation name="" source="ArrayListReader" target="ArrayListIterator" sourceCardinality="1..1" targetCardinality="0..*"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="ArrayListIterator" target="Iterator"/>
+    <UseRelation name="" source="Mainclass" target="Reader" sourceCardinality="1..1" targetCardinality="0..*"/>
+    <UseRelation name="" source="Mainclass" target="ArrayListRestaurant" sourceCardinality="1..1" targetCardinality="0..*"/>
+    <UseRelation name="" source="Mainclass" target="Iterator" sourceCardinality="1..1" targetCardinality="0..*"/>
+    <UseRelation name="" source="ArrayReader" target="ArrayIterator" sourceCardinality="1..1" targetCardinality="0..*"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
